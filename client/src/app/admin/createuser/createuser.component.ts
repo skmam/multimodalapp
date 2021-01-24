@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AccountService } from 'src/app/_services/account.service';
 
 @Component({
@@ -7,17 +8,23 @@ import { AccountService } from 'src/app/_services/account.service';
   styleUrls: ['./createuser.component.css']
 })
 export class CreateuserComponent implements OnInit {
-  @Input() usersFromDashboard: any;
   @Output() cancelCreateUser = new EventEmitter();
   model: any = {};
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService,
+      private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
 
   createuser() {
-    this.accountService.createuser(this.model);
+    this.accountService.createuser(this.model).subscribe(response => {
+      console.log(response);
+      this.cancel();
+    }, error => {
+      console.log(error);
+      this.toastr.error(error.error);
+    })
   }
 
   cancel() {

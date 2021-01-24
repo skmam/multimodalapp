@@ -27,11 +27,7 @@ export class AccountService {
   }
 
   createuser(model: any) {
-    return this.http.post(this.baseUrl + 'account/register', model).subscribe(response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+    return this.http.post(this.baseUrl + 'account/register', model);
   }
 
   setCurrentUser(user: User) {

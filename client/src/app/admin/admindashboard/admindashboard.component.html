@@ -11,7 +11,7 @@
     <div *ngIf="createUserMode" class="container">
         <div class="row justify-content-center">
             <div class="col-4">
-                <app-createuser [usersFromDashboard]="users" (cancelCreateUser)="cancelCreateUserMode($event)"></app-createuser>
+                <app-createuser (cancelCreateUser)="cancelCreateUserMode($event)"></app-createuser>
             </div>
         </div>
     </div>

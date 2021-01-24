@@ -10,13 +10,19 @@ import { NavComponent } from './nav/nav.component'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CreateuserComponent } from './admin/createuser/createuser.component';
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
+import { MessagesComponent } from './messages/messages.component';
+import { HomeComponent } from './home/home.component';
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     CreateuserComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    MessagesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,7 @@ import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.c
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot()
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
