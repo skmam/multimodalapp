@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using API.Converters;
 using API.Extensions;
 using API.Interfaces;
 using API.Middleware;
@@ -43,6 +44,12 @@ namespace API
             });
             services.AddCors();
             services.AddIdentityServices(_config);
+            /*services.AddMvc().AddJsonOptions(opts =>
+            {            
+                opts.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
+                // Add any other converters here
+                // I typically add JsonStringEnumConverter to my APIs
+            });*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
