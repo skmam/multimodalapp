@@ -18,6 +18,13 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { ManageusersComponent } from './admin/manageusers/manageusers.component';
+import { MemberlistCardComponent } from './admin/memberlist-card/memberlist-card.component';
+import { MemberCardComponent } from './admin/member-card/member-card.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { AdditionalmemberdetailsCardComponent } from './admin/additionalmemberdetails-card/additionalmemberdetails-card.component';
+import { UserEditComponent } from './profile/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,13 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     HomeComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    SidenavComponent,
+    ManageusersComponent,
+    MemberlistCardComponent,
+    MemberCardComponent,
+    AdditionalmemberdetailsCardComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +53,8 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     SharedModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

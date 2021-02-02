@@ -1,5 +1,12 @@
 <app-nav></app-nav>
 
-<div class="containter" style="margin-top: 75px;">
-    <router-outlet></router-outlet>
+<div class="containter-fluid">    
+    <div class="row" style="padding-left: 15px;">
+        <div>
+            <app-sidenav></app-sidenav>
+        </div>
+        <div class="col-lg-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>    
 </div>

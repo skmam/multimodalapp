@@ -1,0 +1,57 @@
+
+    <div class="card" *ngIf="member">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-user nav-icon"></i>
+                   User Details
+            </h3>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>Firstname:</strong>
+                <p>{{member.firstname}}</p>
+            </div>
+            <div>
+                <strong>Middlename:</strong>
+                <p>{{member.middlename}}</p>
+            </div>   
+            <div>
+                <strong>Lastname:</strong>
+                <p>{{member.lastname}}</p>
+            </div> 
+            <div>
+                <strong>Username:</strong>
+                <p>{{member.userName}}</p>
+            </div>
+            <div>
+                <strong>Email:</strong>
+                <p>{{member.email}}</p>
+            </div>
+            <div>
+                <strong>Gender:</strong>
+                <p>{{member.gender}}</p>
+            </div>
+            <div>
+                <strong>Age:</strong>
+                <p>{{member.age}}</p>
+            </div>
+            <div>
+                <strong>Member since:</strong>
+                <p>{{member.created}}</p>
+            </div>
+            <div>
+                <strong>Last logged in:</strong>
+                <p>{{member.lastLoggedIn}}</p>
+            </div>
+            <div>
+                <strong>User status:</strong>
+                <p>{{member.latestStatus}}</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group d-flex">
+                <button class="btn btn-primary"><i class="fas fa-edit nav-icon"></i> Edit</button>
+                <button class="btn btn-success"><i class="fas fa-envelope nav-icon"></i> Message</button>
+            </div>
+        </div>
+    </div>

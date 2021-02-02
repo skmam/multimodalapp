@@ -16,6 +16,7 @@ namespace API.Helpers
                     opt => opt.MapFrom(src => src.LoginHistoryDetails.FirstOrDefault(x => x.LoggedIn == src.LoginHistoryDetails.Max(l => l.LoggedIn)).LoggedIn))
                 .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
             CreateMap<LoginHistory, LoginHistoryDto>();
+            CreateMap<MemberUpdateDto, AppUser>();
         }
     }
 }

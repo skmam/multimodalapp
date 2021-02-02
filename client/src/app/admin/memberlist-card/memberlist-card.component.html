@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="fas fa-users nav-icon"></i>
+             Users Registered
+        </h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-active table condensed table-hover" >
+            <thead>
+                <tr class="table-primary">
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>View</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let member of members; let i = index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{member.userName}}</td>
+                        <td>{{member.firstname}}, {{member.lastname}}</td>
+                        <td><a (click)='sendClickedRow(i)' style="cursor: pointer;"><i class="fas fa-info-circle nav-icon"></i></a></td>
+                        <td><a (click)='sendClickedRow(i)' style="cursor: pointer;"><i class="fas fa-envelope nav-icon"></i></a></td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

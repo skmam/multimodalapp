@@ -1,0 +1,36 @@
+
+    <div class="card" *ngIf="member">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-user nav-icon"></i>
+                   Additional Details
+            </h3>
+        </div>
+        <div class="card-body">
+            <tabset class="member-tabset">
+                <tab heading='Login History'>
+                    <table class="table table-active table condensed table-hover" >
+                        <thead>
+                            <tr class="table-primary">
+                                <th>#</th>
+                                <th>Logged In</th>
+                                <th>Logged Out</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let history of member.loginHistoryDetails; let i = index">
+                                <tr>
+                                    <td>{{i+1}}</td>
+                                    <td>{{history.loggedIn}}</td>
+                                    <td>{{history.loggedOut}}</td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </tab>
+                <tab heading="Edit History">
+                    <p>Edit history will go here</p>
+                </tab>
+            </tabset>
+        </div>
+    </div>
