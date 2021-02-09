@@ -27,11 +27,11 @@
         </ul>
 
         <div class="dropdown mr-3" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-            <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</a>
+            <a class="dropdown-toggle text-light" dropdownToggle><i class="fas fa-user"></i> Welcome {{user.username | titlecase}}</a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
-                <a class="dropdown-item" routerLink="/user/edit" routerLinkActive='active'>Edit Profile</a>
+                <a class="dropdown-item" routerLink="/user/edit" routerLinkActive='active'><i class="fas fa-user-edit"></i> Edit Profile</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" (click)="logout()">Logout</a>
+                <a class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>
 

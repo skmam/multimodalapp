@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from "ngx-spinner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component'
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CreateuserComponent } from './admin/createuser/createuser.component';
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HomeComponent } from './home/home.component';
-import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -27,6 +25,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { AdditionalmemberdetailsCardComponent } from './admin/additionalmemberdetails-card/additionalmemberdetails-card.component';
 import { UserEditComponent } from './profile/user-edit/user-edit.component';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,9 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     MemberlistCardComponent,
     MemberCardComponent,
     AdditionalmemberdetailsCardComponent,
-    UserEditComponent
+    UserEditComponent,
+    TextInputComponent,
+    DateInputComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     NgxSpinnerModule
   ],
